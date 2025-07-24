@@ -55,7 +55,7 @@ class DatabaseSeeder extends Seeder
             'alamat' => 'Jl. Gajah Mada, Kelurahan Masiri, Kecamatan Batauga, Kabupaten Buton, Sulawesi Tenggara',
             'maps' => '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.3509091053234!2d122.61879689999998!3d-5.6622875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2da46984f0ded0b3%3A0x26383f068b6f5583!2sSMAN%202%20BATAUGA!5e0!3m2!1sid!2sid!4v1753264995948!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
             'nama_ketua' => 'Hanaruddin, S.Sos., M.Si.',
-            'sidebar_lg' => 'SMAN 2 Batauga',
+            'sidebar_lg' => 'SMAN 2 BATAUGA',
             'sidebar_mini' => 'S2B',
             'title_header' => 'Sistem Informasi Pendaftaran Siswa Baru SMAN 2 Batauga',
             'logo' => 'aplikasi-images/sman-2-batauga.png',

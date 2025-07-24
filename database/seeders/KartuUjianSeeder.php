@@ -13,6 +13,6 @@ class KartuUjianSeeder extends Seeder
      */
     public function run(): void
     {
-        Kartuujian::factory(10)->create();
+        Kartuujian::factory(50)->create();
     }
 }

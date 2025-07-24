@@ -13,6 +13,6 @@ class CalonSiswaSeeder extends Seeder
      */
     public function run(): void
     {
-        Calonsiswa::factory(20)->create();
+        Calonsiswa::factory(100)->create();
     }
 }

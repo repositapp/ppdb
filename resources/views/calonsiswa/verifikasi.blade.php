@@ -46,7 +46,7 @@
                     <tbody>
                         @forelse ($siswa as $item)
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
+                                <td class="text-center">{{ $siswa->firstItem() + $loop->index }}</td>
                                 <td>{{ $item->no_pendaftaran }}</td>
                                 <td>{{ $item->nisn }}</td>
                                 <td>{{ $item->nama_lengkap }}</td>
