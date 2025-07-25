@@ -84,5 +84,20 @@ Route::prefix('panel')->middleware(['auth:web', 'role:admin, petugas'])->group(f
 });
 
 Route::prefix('mobile')->middleware(['auth:user', 'role:siswa'])->group(function () {
+    Route::post('/user/logout', [UserAuthController::class, 'logout'])->name('user.logout');
+    // Dashboard
     Route::get('dashboard', [DashboardSiswaController::class, 'index'])->name('dashboard');
+    // Pengumuman atau Informasi PPDB
+    Route::get('pengumuman', [PengumumanController::class, 'pengumuman'])->name('pengumuman');
+    Route::get('pengumuman/detail/{slug}', [PengumumanController::class, 'detail'])->name('pengumuman.detail');
+    // Pendaftaran
+    Route::get('pendaftaran', [CalonSiswaController::class, 'pendaftaran'])->name('pendaftaran');
+    Route::get('/pendaftaran/detail/{id}', [CalonSiswaController::class, 'detail'])->name('pendaftaran.detail');
+    Route::get('/pendaftaran/{id}/edit', [CalonSiswaController::class, 'edit'])->name('pendaftaran.edit');
+    Route::put('/pendaftaran/{id}', [CalonSiswaController::class, 'update'])->name('pendaftaran.update');
+    // Isi Biodata Calon Siswa
+    Route::get('/pendaftaran/create', [CalonSiswaController::class, 'create'])->name('pendaftaran.create');
+    Route::post('/pendaftaran/create', [CalonSiswaController::class, 'store'])->name('pendaftaran.store');
+    // Profil
+    Route::get('profil', [UserController::class, 'profil'])->name('profil');
 });

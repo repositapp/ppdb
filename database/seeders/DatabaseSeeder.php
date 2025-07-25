@@ -45,6 +45,17 @@ class DatabaseSeeder extends Seeder
             'status' => '1',
             'created_at' => now(),
         ]);
+        User::updateOrCreate([
+            'name' => 'Aldo',
+            'username' => 'siswa',
+            'email' => 'aldo@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('12345678'),
+            'avatar' => 'users-images/1J7iwiUja9gMqtHL7eIzR6RbaH0rrzZ5buklDQLy.png',
+            'role' => 'siswa',
+            'status' => '1',
+            'created_at' => now(),
+        ]);
         // User::factory(100)->create();
 
         Aplikasi::updateOrCreate([

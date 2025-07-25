@@ -15,8 +15,13 @@ class Calonsiswa extends Model
         return $this->hasOne(KartuUjian::class);
     }
 
-    public function dokumen()
+    public function dokumens()
     {
         return $this->hasOne(Dokumensiswa::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

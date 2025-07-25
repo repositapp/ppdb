@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('calonsiswas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->index()->constrained();
             $table->string('no_pendaftaran')->unique();
             $table->string('nama_lengkap');
             $table->string('nisn')->unique();

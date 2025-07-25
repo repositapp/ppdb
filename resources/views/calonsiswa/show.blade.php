@@ -111,7 +111,7 @@
                             <tr>
                                 <td style="width: 150px">Kartu Keluarga</td>
                                 <td>:
-                                    <a href="{{ asset('dokumen-file/' . $siswa->dokumen->kk_file) }}" target="_blank"
+                                    <a href="{{ asset('dokumen-file/' . $siswa->dokumens->kk_file) }}" target="_blank"
                                         class="btn btn-default btn-sm text-aqua" style="margin-left: 10px"><i
                                             class="fa fa-download"></i></a>
                                 </td>
@@ -119,7 +119,7 @@
                             <tr>
                                 <td style="width: 150px">Akta Kelahiran</td>
                                 <td>:
-                                    <a href="{{ asset('dokumen-file/' . $siswa->dokumen->akta_file) }}" target="_blank"
+                                    <a href="{{ asset('dokumen-file/' . $siswa->dokumens->akta_file) }}" target="_blank"
                                         class="btn btn-default btn-sm text-aqua" style="margin-left: 10px"><i
                                             class="fa fa-download"></i></a>
                                 </td>
@@ -127,7 +127,7 @@
                             <tr>
                                 <td style="width: 150px">Ijazah SD</td>
                                 <td>:
-                                    <a href="{{ asset('dokumen-file/' . $siswa->dokumen->ijazah_sd_file) }}"
+                                    <a href="{{ asset('dokumen-file/' . $siswa->dokumens->ijazah_sd_file) }}"
                                         target="_blank" class="btn btn-default btn-sm text-aqua"
                                         style="margin-left: 10px"><i class="fa fa-download"></i></a>
                                 </td>
@@ -135,7 +135,7 @@
                             <tr>
                                 <td style="width: 150px">Ijazah SMP</td>
                                 <td>:
-                                    <a href="{{ asset('dokumen-file/' . $siswa->dokumen->ijazah_smp_file) }}"
+                                    <a href="{{ asset('dokumen-file/' . $siswa->dokumens->ijazah_smp_file) }}"
                                         target="_blank" class="btn btn-default btn-sm text-aqua"
                                         style="margin-left: 10px"><i class="fa fa-download"></i></a>
                                 </td>
@@ -143,7 +143,7 @@
                             <tr>
                                 <td style="width: 150px">Raport Siswa</td>
                                 <td>:
-                                    <a href="{{ asset('dokumen-file/' . $siswa->dokumen->rapor_file) }}" target="_blank"
+                                    <a href="{{ asset('dokumen-file/' . $siswa->dokumens->rapor_file) }}" target="_blank"
                                         class="btn btn-default btn-sm text-aqua" style="margin-left: 10px"><i
                                             class="fa fa-download"></i></a>
                                 </td>
@@ -151,7 +151,7 @@
                             <tr>
                                 <td style="width: 150px">Pas Foto</td>
                                 <td>:
-                                    <a href="{{ asset('dokumen-file/' . $siswa->dokumen->foto_file) }}" target="_blank"
+                                    <a href="{{ asset('dokumen-file/' . $siswa->dokumens->foto_file) }}" target="_blank"
                                         class="btn btn-default btn-sm text-aqua" style="margin-left: 10px"><i
                                             class="fa fa-download"></i></a>
                                 </td>

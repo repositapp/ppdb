@@ -136,4 +136,44 @@ class PengumumanController extends Controller
 
         return view('pengumuman.show', compact('pengumuman', 'pengumumans'));
     }
+
+    public function pengumuman()
+    {
+        $pengumumans = Pengumuman::with(['author', 'kategori']);
+
+        $search = request('search');
+        if (request('search')) {
+            $pengumumans->when($search, function ($query, $search) {
+                $query->where('judul', 'like', '%' . $search . '%')
+
+                    // Relasi ke author
+                    ->orWhereHas('author', function ($q) use ($search) {
+                        $q->where('name', 'like', '%' . $search . '%');
+                    })
+
+                    // Relasi ke kategori
+                    ->orWhereHas('kategori', function ($q) use ($search) {
+                        $q->where('name', 'like', '%' . $search . '%');
+                    });
+            })
+                ->latest();
+        }
+
+        $pengumumans = $pengumumans->paginate(5)->appends(['search' => $search]);
+
+        return view('mobile.pengumuman', compact('pengumumans', 'search'));
+    }
+
+    public function detail($slug)
+    {
+        $pengumuman = Pengumuman::with('kategori', 'author')->where('slug', $slug)->firstOrFail();
+
+        // Tambahkan +1 setiap kali dibuka
+        if (!session()->has('viewed_pengumuman_' . $pengumuman->id)) {
+            $pengumuman->increment('views');
+            session(['viewed_pengumuman_' . $pengumuman->id => true]);
+        }
+
+        return view('mobile.pengumuman-detail', compact('pengumuman'));
+    }
 }

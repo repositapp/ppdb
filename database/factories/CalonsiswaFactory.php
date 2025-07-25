@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,6 +18,7 @@ class CalonsiswaFactory extends Factory
     public function definition(): array
     {
         return [
+            'user_id' => User::factory()->state(['role' => 'siswa']),
             'no_pendaftaran' => 'PSB2025' . $this->faker->unique()->numberBetween(1000, 9999),
             'nama_lengkap' => $this->faker->name(),
             'nisn' => $this->faker->unique()->numerify('##########'),
