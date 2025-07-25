@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\CalonsiswaController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardSiswaController;
 use App\Http\Controllers\DokumenController;
 use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\HomeController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PengumumanController;
+use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use UniSharp\LaravelFilemanager\Lfm;
@@ -29,9 +31,21 @@ use UniSharp\LaravelFilemanager\Lfm;
 |
 */
 
-Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/authentication', [AuthController::class, 'authenticate'])->name('authentication');
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+// Route untuk Admin
+Route::middleware('guest:web')->group(function () {
+    Route::get('/login', [AuthController::class, 'index'])->name('login');
+    Route::post('/authentication', [AuthController::class, 'authenticate'])->name('authentication');
+});
+
+// Route untuk Calon Siswa
+Route::middleware('guest:user')->group(function () {
+    Route::get('/user/login', [UserAuthController::class, 'index'])->name('user.login');
+    Route::post('/user/authentication', [UserAuthController::class, 'authenticate'])->name('user.authentication');
+
+    // Route Registrasi
+    Route::get('/user/register', [UserAuthController::class, 'registrasi'])->name('user.register');
+    Route::post('/user/register', [UserAuthController::class, 'register'])->name('user.register.post');
+});
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/pengumuman/{slug}', [PengumumanController::class, 'show'])->name('pengumuman.show');
@@ -42,7 +56,9 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 
 Route::get('/{slug}', [MenuController::class, 'show'])->name('menu.show');
 
-Route::prefix('panel')->middleware('auth')->group(function () {
+Route::prefix('panel')->middleware(['auth:web', 'role:admin, petugas'])->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('kategori', KategoriController::class)->except(['show']);
     // Calon Siswa
@@ -65,4 +81,8 @@ Route::prefix('panel')->middleware('auth')->group(function () {
     // Settings
     Route::resource('users', UserController::class)->except(['show']);
     Route::resource('aplikasi', AplikasiController::class)->except(['show', 'create', 'store', 'destroy', 'edit']);
+});
+
+Route::prefix('mobile')->middleware(['auth:user', 'role:siswa'])->group(function () {
+    Route::get('dashboard', [DashboardSiswaController::class, 'index'])->name('dashboard');
 });

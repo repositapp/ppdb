@@ -1,10 +1,11 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-        <a href="index.html" class="logo d-flex align-items-center" style="font-size: xx-large; font-weight: 900;">
+        <a href="{{ route('index') }}" class="logo d-flex align-items-center"
+            style="font-size: xx-large; font-weight: 900;">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <img src="{{ asset('storage/' . $aplikasi->logo) }}" alt="Logo Dinas Sosial">
-            <h1 class="sitename"><strong>Dinas Sosial</strong> <br> Kota Baubau</h1>
+            <h1 class="sitename"><strong>SMAN 2 BATAUGA</strong> <br> BUTON SELATAN</h1>
             {{-- <h1 class="sitename">UpConstruction</h1> <span>.</span> --}}
         </a>
 
@@ -32,8 +33,6 @@
                         <li><a href="{{ url($menu->slug) }}">{{ $menu->name }}</a></li>
                     @endif
                 @endforeach
-
-                <li><a href="{{ route('dokumen.show') }}">Dokumen</a></li>
             </ul>
 
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

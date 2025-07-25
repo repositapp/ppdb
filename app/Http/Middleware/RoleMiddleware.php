@@ -21,7 +21,13 @@ class RoleMiddleware
     {
         // Cek apakah user sudah login
         if (!Auth::check()) {
-            return redirect('/login');
+            // Redirect ke login yang sesuai
+            if (in_array('admin', $roles)) {
+                return redirect()->route('login');
+            } elseif (in_array('siswa', $roles)) {
+                return redirect()->route('user.login');
+            }
+            return redirect()->route('login');
         }
 
         $user = Auth::user();

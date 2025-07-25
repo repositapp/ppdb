@@ -36,9 +36,14 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'web' => [ // Guard untuk Admin
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'users', // Gunakan provider users
+        ],
+
+        'user' => [ // Guard untuk Calon Siswa
+            'driver' => 'session',
+            'provider' => 'users', // Gunakan provider users yang sama
         ],
     ],
 

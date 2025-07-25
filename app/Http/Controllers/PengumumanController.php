@@ -124,10 +124,7 @@ class PengumumanController extends Controller
     public function show($slug)
     {
         $pengumuman = Pengumuman::with('kategori', 'author')->where('slug', $slug)->firstOrFail();
-        $artikels = Artikel::latest()->take(5)
-            ->where('status', 1)
-            ->get();
-        $pengumumans = Pengumuman::latest()->take(5)
+        $pengumumans = Pengumuman::latest()->take(10)
             ->where('status', 1)
             ->get();
 
@@ -137,6 +134,6 @@ class PengumumanController extends Controller
             session(['viewed_pengumuman_' . $pengumuman->id => true]);
         }
 
-        return view('pengumuman.show', compact('pengumuman', 'artikels', 'pengumumans'));
+        return view('pengumuman.show', compact('pengumuman', 'pengumumans'));
     }
 }

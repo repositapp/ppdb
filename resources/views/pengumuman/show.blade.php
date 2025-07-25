@@ -58,29 +58,6 @@
             <div class="col-lg-4 sidebar">
                 <div class="widgets-container" data-aos="fade-left" data-aos-delay="200">
                     <div class="recent-posts-widget widget-item">
-                        <h3 class="widget-title">Berita Terbaru</h3>
-                        @foreach ($artikels as $a)
-                            <div class="post-item">
-                                @if ($a->gambar)
-                                    <img src="{{ asset('storage/' . $a->gambar) }}" class="img-fluid"
-                                        alt="{{ $a->kategori->name }}">
-                                @else
-                                    <img src="{{ URL::asset('dist/img/blog/blog-recent-1.jpg') }}"
-                                        alt="{{ $a->kategori->name }}" class="flex-shrink-0">
-                                @endif
-                                <div>
-                                    <h4><a href="{{ route('berita.show', $a->slug) }}">{{ $a->judul }}</a>
-                                    </h4>
-                                    <time datetime="2020-01-01"><span style="font-size: 12px;"><i
-                                                class="bi bi-folder"></i>{{ $a->kategori->name }}</span>
-                                        <br>{{ $a->created_at->translatedFormat('d F Y, h:s') }}
-                                    </time>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-
-                    <div class="recent-posts-widget widget-item">
                         <h3 class="widget-title">Pengumuman Terbaru</h3>
                         @foreach ($pengumumans as $pengumuman)
                             <div class="post-item">
