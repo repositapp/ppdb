@@ -13,7 +13,7 @@ class CalonsiswaController extends Controller
 {
     public function index()
     {
-        $siswa = Calonsiswa::with('dokumen')->whereNot('status', 'pending');
+        $siswa = Calonsiswa::with('dokumens')->whereNot('status', 'pending');
 
         $search = request('search');
         if ($search) {
@@ -30,7 +30,7 @@ class CalonsiswaController extends Controller
 
     public function verifikasi()
     {
-        $siswa = Calonsiswa::with('dokumen')->where('status', 'pending');
+        $siswa = Calonsiswa::with('dokumens')->where('status', 'pending');
 
         $search = request('search');
         if ($search) {
@@ -47,7 +47,7 @@ class CalonsiswaController extends Controller
 
     public function show($id)
     {
-        $siswa = Calonsiswa::with('dokumen')->findOrFail($id);
+        $siswa = Calonsiswa::with('dokumens')->findOrFail($id);
         return view('calonsiswa.show', compact('siswa'));
     }
 
