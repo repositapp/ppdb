@@ -62,7 +62,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    @if ($item->dokumen)
+                                    @if ($item->dokumens)
                                         <a href="{{ route('calonsiswa.show', $item->id) }}"
                                             class="btn btn-xs btn-info">Lihat</a>
                                     @else
@@ -70,7 +70,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    @if ($item->dokumen)
+                                    @if ($item->dokumens)
                                         <form action="{{ route('calonsiswa.updateStatus', $item->id) }}" method="POST"
                                             class="form-inline">
                                             @csrf
