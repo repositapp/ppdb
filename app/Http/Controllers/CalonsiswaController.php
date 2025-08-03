@@ -160,7 +160,7 @@ class CalonsiswaController extends Controller
         $dokumenData = [];
         foreach ($dokumenValidated as $field => $file) {
             if ($file) {
-                $path = $file->store('dokumen-file/' . $calonSiswa->id, 'public');
+                $path = $file->store('dokumen-file/' . $calonSiswa->nisn . '-' . $calonSiswa->nama_lengkap, 'public');
                 $dokumenData[$field] = $path;
             }
         }
@@ -244,7 +244,7 @@ class CalonsiswaController extends Controller
                     Storage::disk('public')->delete($dokumenSiswa->$field);
                 }
                 // Simpan file baru
-                $path = $file->store('dokumen/' . $calonSiswa->id, 'public');
+                $path = $file->store('dokumen/' . $calonSiswa->nisn . '-' . $calonSiswa->nama_lengkap, 'public');
                 $dokumenDataToUpdate[$field] = $path;
             }
         }

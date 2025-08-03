@@ -25,7 +25,7 @@
         @endif
 
         <!-- Form Pendaftaran -->
-        <form action="{{ route('pendaftaran.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('pendaftaran.store') }}" method="POST" enctype="multipart/form-data" id="registerForm">
             @csrf
 
             <!-- Data Pribadi -->
@@ -439,10 +439,37 @@
             </div> --}}
 
             <!-- Tombol Kirim -->
-            <button type="submit"
+            {{-- <button type="submit"
                 class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md">
                 Kirim Formulir
+            </button> --}}
+
+            <button type="submit" id="submitBtn"
+                class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded flex justify-center items-center">
+                <svg id="spinner" class="hidden animate-spin h-5 w-5 mr-2 text-white"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                        stroke-width="4">
+                    </circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                </svg>
+                <span id="btnText">Kirim Formulir</span>
             </button>
         </form>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const form = document.getElementById('registerForm');
+                const submitBtn = document.getElementById('submitBtn');
+                const btnText = document.getElementById('btnText');
+                const spinner = document.getElementById('spinner');
+
+                form.addEventListener('submit', function() {
+                    submitBtn.disabled = true;
+                    btnText.textContent = 'Memproses...';
+                    spinner.classList.remove('hidden');
+                });
+            });
+        </script>
     </div>
 @endsection

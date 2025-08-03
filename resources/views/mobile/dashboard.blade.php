@@ -10,29 +10,47 @@
     </div>
 
     <!-- Cards Grid -->
-    <div class="grid grid-cols-2 md:grid-cols-2 gap-5 mb-8">
-        <!-- Card 1 -->
-        <a href="{{ route('pendaftaran.create') }}">
-            <div
-                class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition-shadow">
-                <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white mb-3">
-                    <i class="las la-file-alt text-xl"></i>
+    @if ($siswa == 0)
+        <div class="grid grid-cols-2 md:grid-cols-2 gap-5 mb-8">
+            <!-- Card 1 -->
+            <a href="{{ route('pendaftaran.create') }}">
+                <div
+                    class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white mb-3">
+                        <i class="las la-file-alt text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">PPDB Online</h3>
+                    <p class="text-gray-600 text-sm">Daftar sebagai siswa baru</p>
                 </div>
-                <h3 class="font-bold text-lg mb-2">PPDB Online</h3>
-                <p class="text-gray-600 text-sm">Daftar sebagai siswa baru</p>
-            </div>
-        </a>
+            </a>
 
-        <!-- Card 2 -->
-        <div
-            class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition-shadow">
-            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white mb-3">
-                <i class="las la-check-circle text-xl"></i>
-            </div>
-            <h3 class="font-bold text-lg mb-2">Cek Status</h3>
-            <p class="text-gray-600 text-sm">Lihat status pendaftaran</p>
+            <!-- Card 2 -->
+            <a href="{{ route('pendaftaran') }}">
+                <div
+                    class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white mb-3">
+                        <i class="las la-check-circle text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Cek Status</h3>
+                    <p class="text-gray-600 text-sm">Lihat status pendaftaran</p>
+                </div>
+            </a>
         </div>
-    </div>
+    @else
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-5 mb-8">
+            <!-- Card 2 -->
+            <a href="{{ route('pendaftaran') }}">
+                <div
+                    class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white mb-3">
+                        <i class="las la-check-circle text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Cek Status</h3>
+                    <p class="text-gray-600 text-sm">Lihat status pendaftaran</p>
+                </div>
+            </a>
+        </div>
+    @endif
 
     <!-- Informasi PPDB Section -->
     <h2 class="text-xl font-bold mb-4">Informasi PPDB</h2>

@@ -132,5 +132,5 @@
                 });
             }
         </script>
-        </body>
-    @endsection
+    </div>
+@endsection

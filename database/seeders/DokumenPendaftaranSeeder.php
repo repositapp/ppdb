@@ -19,12 +19,12 @@ class DokumenPendaftaranSeeder extends Seeder
         foreach ($calonSiswas as $siswa) {
             Dokumensiswa::create([
                 'calonsiswa_id' => $siswa->id,
-                'kk_file' => 'dokumen-file/kk_' . $siswa->id . '.pdf',
-                'akta_file' => 'dokumen-file/akta_' . $siswa->id . '.pdf',
-                'ijazah_sd_file' => 'dokumen-file/ijazah_sd_' . $siswa->id . '.pdf',
-                'ijazah_smp_file' => 'dokumen-file/ijazah_smp_' . $siswa->id . '.pdf',
-                'rapor_file' => 'dokumen-file/rapor_' . $siswa->id . '.pdf',
-                'foto_file' => 'dokumen-file/foto_' . $siswa->id . '.jpg',
+                'kk_file' => 'dokumen-file/dokumen-1.pdf',
+                'akta_file' => 'dokumen-file/dokumen-1.pdf',
+                'ijazah_sd_file' => 'dokumen-file/dokumen-1.pdf',
+                'ijazah_smp_file' => 'dokumen-file/dokumen-1.pdf',
+                'rapor_file' => 'dokumen-file/dokumen-1.pdf',
+                'foto_file' => 'dokumen-file/dokumen-1.jpg',
             ]);
         }
     }
