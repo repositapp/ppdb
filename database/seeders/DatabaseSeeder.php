@@ -495,6 +495,7 @@ class DatabaseSeeder extends Seeder
             DokumenPendaftaranSeeder::class,
             LogSeeder::class,
             KartuUjianSeeder::class,
+            JalurPendaftaranSeeder::class,
         ]);
     }
 }

@@ -32,13 +32,36 @@
                 <img src="{{ URL::asset('dist/img/images/logo/logo.png') }}" alt="Logo" class="w-6 h-8 mr-3">
                 <span class="font-bold text-lg">PPDB SMAN 2 BATAUGA</span>
             </div>
-            <a href="javascript:void();"
-                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                <i class="las la-sign-out-alt text-xl text-gray-600"></i>
-            </a>
-            <form id="logout-form" action="{{ route('user.logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
+            <div class="flex items-center space-x-4">
+                <!-- Ikon Notifikasi Chat -->
+                <a href="{{ route('user.chat.index') }}" class="relative text-gray-600 hover:text-blue-500">
+                    <i class="las la-bell text-xl"></i>
+                    <!-- Tampilkan badge hanya jika ada pesan -->
+                    @if (isset($mobileUnreadChatCount) && $mobileUnreadChatCount > 0)
+                        <span
+                            class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                            {{ $mobileUnreadChatCount }}
+                        </span>
+                    @endif
+                </a>
+
+                <!-- Ikon Logout -->
+                <a href="javascript:void();"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                    class="text-gray-600 hover:text-red-500">
+                    <i class="las la-sign-out-alt text-xl"></i>
+                </a>
+                <form id="logout-form" action="{{ route('user.logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </div>
+        @elseif (Request::is('mobile/prestasi', 'mobile/jalur', 'mobile/chat'))
+            <div class="flex items-center content-center">
+                <a href="{{ route('dashboard') }}">
+                    <i class="las la-angle-left font-bold text-xl text-gray-600 mr-5"></i>
+                </a>
+                <span class="font-bold text-lg">@yield('title')</span>
+            </div>
         @else
             <div class="flex items-center content-center">
                 <a href="{{ redirect()->back()->getTargetUrl() }}">

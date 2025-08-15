@@ -47,7 +47,7 @@ class CalonsiswaController extends Controller
 
     public function show($id)
     {
-        $siswa = Calonsiswa::with('dokumens')->findOrFail($id);
+        $siswa = Calonsiswa::with(['dokumens', 'jalurPendaftaran', 'prestasis', 'user'])->findOrFail($id);
         return view('calonsiswa.show', compact('siswa'));
     }
 

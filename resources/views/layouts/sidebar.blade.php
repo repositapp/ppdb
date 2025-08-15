@@ -66,6 +66,11 @@
                     </li>
                 </ul>
             </li>
+            <li class="{{ Request::is('panel/chat*') ? 'active' : '' }}">
+                <a href="{{ route('admin.chat.index') }}">
+                    <i class="fa fa-comments"></i> <span>Chat</span>
+                </a>
+            </li>
             <li class="{{ Request::is('panel/pengumuman*') ? 'active' : '' }}">
                 <a href="{{ route('pengumuman.index') }}"><i class="fa fa-bullhorn"></i><span>Pengumuman</span></a>
             </li>

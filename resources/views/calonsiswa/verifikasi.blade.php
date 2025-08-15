@@ -38,6 +38,7 @@
                             <th>Nama Lengkap</th>
                             <th>Asal Sekolah</th>
                             <th>Tahun Lulus</th>
+                            <th>Jalur Pendaftaran</th>
                             <th>Status</th>
                             <th>Dokumen</th>
                             <th class="text-center" style="width: 80px">Aksi</th>
@@ -52,6 +53,7 @@
                                 <td>{{ $item->nama_lengkap }}</td>
                                 <td>{{ $item->asal_sekolah }}</td>
                                 <td>{{ $item->tahun_lulus }}</td>
+                                <td>{{ $item->jalurPendaftaran->nama_jalur ?? '-' }}</td>
                                 <td>
                                     @if ($item->status == 'pending')
                                         <span class="label label-warning">Pending</span>

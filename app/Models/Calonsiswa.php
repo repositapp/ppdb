@@ -24,4 +24,14 @@ class Calonsiswa extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function jalurPendaftaran()
+    {
+        return $this->belongsTo(JalurPendaftaran::class);
+    }
+
+    public function prestasis()
+    {
+        return $this->hasMany(Prestasi::class, 'calonsiswa_id');
+    }
 }

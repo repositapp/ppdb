@@ -11,7 +11,7 @@
 
     <!-- Cards Grid -->
     @if ($siswa == 0)
-        <div class="grid grid-cols-2 md:grid-cols-2 gap-5 mb-8">
+        <div class="grid grid-cols-2 md:grid-cols-2 gap-4 mb-8">
             <!-- Card 1 -->
             <a href="{{ route('pendaftaran.create') }}">
                 <div
@@ -37,8 +37,31 @@
             </a>
         </div>
     @else
-        <div class="grid grid-cols-1 md:grid-cols-1 gap-5 mb-8">
+        <div class="grid grid-cols-2 md:grid-cols-2 gap-4 mb-4">
+            <a href="{{ route('prestasi.index') }}">
+                <div
+                    class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-white mb-3">
+                        <i class="las la-trophy text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Data Prestasi</h3>
+                    <p class="text-gray-600 text-sm">Kelola prestasi Anda</p>
+                </div>
+            </a>
+
             <!-- Card 2 -->
+            <a href="{{ route('jalur.index') }}">
+                <div
+                    class="bg-white rounded-xl shadow-md px-4 py-6 flex flex-col items-center text-center hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white mb-3">
+                        <i class="las la-road text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Jalur Pendaftaran</h3>
+                    <p class="text-gray-600 text-sm">Pilih jalur Anda</p>
+                </div>
+            </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-4 mb-8">
             <a href="{{ route('pendaftaran') }}">
                 <div
                     class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition-shadow">
@@ -51,6 +74,24 @@
             </a>
         </div>
     @endif
+
+    <div class="mt-6 mb-8">
+        <h2 class="text-xl font-bold mb-3">Komunikasi</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <a href="{{ route('user.chat.index') }}"
+                class="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow">
+                <div class="flex items-center">
+                    <div class="mr-4">
+                        <i class="las la-comments text-blue-500 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium">Chat dengan Admin</h3>
+                        <p class="text-sm text-gray-600">Kirim pesan atau tanya jawab dengan admin</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 
     <!-- Informasi PPDB Section -->
     <h2 class="text-xl font-bold mb-4">Informasi PPDB</h2>
