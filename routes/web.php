@@ -10,6 +10,7 @@ use App\Http\Controllers\DashboardSiswaController;
 use App\Http\Controllers\DokumenController;
 use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImportController;
 use App\Http\Controllers\JalurPendaftaranController;
 use App\Http\Controllers\KartuujianController;
 use App\Http\Controllers\KategoriController;
@@ -93,6 +94,9 @@ Route::prefix('panel')->middleware(['auth:web', 'role:admin, petugas'])->group(f
     // Settings
     Route::resource('users', UserController::class)->except(['show']);
     Route::resource('aplikasi', AplikasiController::class)->except(['show', 'create', 'store', 'destroy', 'edit']);
+    // Import Data
+    Route::get('/import-calon-siswa', [ImportController::class, 'importForm'])->name('import.form');
+    Route::post('/import-calon-siswa', [ImportController::class, 'import'])->name('import.calon-siswa');
 });
 
 Route::prefix('mobile')->middleware(['auth:user', 'role:siswa'])->group(function () {

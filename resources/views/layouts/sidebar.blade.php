@@ -102,6 +102,8 @@
                             href="{{ route('users.index') }}"><i class="fa fa-circle-o"></i> Akun Pengguna</a></li>
                     <li class="{{ Request::is('panel/aplikasi*') ? 'active' : '' }}"><a
                             href="{{ route('aplikasi.index') }}"><i class="fa fa-circle-o"></i> Aplikasi</a></li>
+                    <li class="{{ Request::is('panel/import-calon-siswa') ? 'active' : '' }}"><a
+                            href="{{ route('import.form') }}"><i class="fa fa-circle-o"></i> Import Data</a></li>
                 </ul>
             </li>
             <li>

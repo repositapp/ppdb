@@ -491,10 +491,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            CalonSiswaSeeder::class,
-            DokumenPendaftaranSeeder::class,
-            LogSeeder::class,
-            KartuUjianSeeder::class,
+            // CalonSiswaSeeder::class,
+            // DokumenPendaftaranSeeder::class,
+            // LogSeeder::class,
+            // KartuUjianSeeder::class,
             JalurPendaftaranSeeder::class,
         ]);
     }
