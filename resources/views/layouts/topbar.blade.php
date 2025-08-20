@@ -16,6 +16,13 @@
             <span class="icon-bar"></span>
         </a>
 
+        <!-- Tambahan tulisan di tengah header -->
+        <div class="navbar-header" style="display:inline-block; padding:15px 20px;">
+            <span style="color:#fff; font-size:16px; font-weight:bold;">
+                Sistem Informasi SMAN 2 Batauga
+            </span>
+        </div>
+
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <!-- User Account: style can be found in dropdown.less -->

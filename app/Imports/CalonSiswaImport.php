@@ -61,7 +61,7 @@ class CalonSiswaImport implements ToModel, WithHeadingRow
             'pekerjaan_ibu'         => $row['pekerjaan_ibu'],
             'nilai_un'              => $row['nilai_un'] ?? null,
             'nilai_raport'          => $row['nilai_raport'] ?? null,
-            'status'                => 'pending',
+            'status'                => $row['status'],
             // 'jalur_pendaftaran_id'  => $jalur ? $jalur->id : null,
             'jalur_pendaftaran_id'  => 1,
         ]);
