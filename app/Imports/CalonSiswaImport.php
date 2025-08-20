@@ -2,7 +2,7 @@
 
 namespace App\Imports;
 
-use App\Models\CalonSiswa;
+use App\Models\Calonsiswa;
 use App\Models\Dokumensiswa;
 use App\Models\JalurPendaftaran;
 use App\Models\Prestasi;
@@ -40,7 +40,7 @@ class CalonSiswaImport implements ToModel, WithHeadingRow
         // }
 
         // 3. Insert calon siswa
-        $calon = CalonSiswa::create([
+        $calon = Calonsiswa::create([
             'user_id'               => $user->id,
             'no_pendaftaran'        => $row['no_pendaftaran'],
             'nama_lengkap'          => $row['nama_lengkap'],
