@@ -71,7 +71,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="9" class="text-center">Belum ada data calon siswa yang telah diverifikasi.
+                                <td colspan="10" class="text-center">Belum ada data calon siswa yang telah diverifikasi.
                                 </td>
                             </tr>
                         @endforelse
