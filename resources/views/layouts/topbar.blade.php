@@ -16,12 +16,10 @@
             <span class="icon-bar"></span>
         </a>
 
-        <!-- Tambahan tulisan di tengah header -->
-        <div class="navbar-header" style="display:inline-block; padding:15px 20px;">
-            <span style="color:#fff; font-size:16px; font-weight:bold;">
-                Sistem Informasi SMAN 2 Batauga
-            </span>
-        </div>
+        <!-- Tambahan tulisan di header -->
+        <span class="navbar-text" style="color:white; font-weight:bold; margin-left:15px;">
+            Sistem Informasi SMAN 2 Batauga
+        </span>
 
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
