@@ -18,7 +18,7 @@
 
         <!-- Tambahan tulisan di header -->
         <span class="navbar-text" style="color:white; font-weight:bold; margin-left:15px;">
-            Sistem Informasi SMAN 2 Batauga
+            SISTEM INFORMASI PENERIMAAN SISWA BARU SMA NEGERI 2 BATAUGA
         </span>
 
         <div class="navbar-custom-menu">
